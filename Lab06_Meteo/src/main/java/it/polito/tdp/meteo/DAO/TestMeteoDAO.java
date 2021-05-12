@@ -2,6 +2,7 @@ package it.polito.tdp.meteo.DAO;
 
 import java.util.List;
 
+import it.polito.tdp.meteo.model.Citta;
 import it.polito.tdp.meteo.model.Rilevamento;
 
 public class TestMeteoDAO {
@@ -11,6 +12,7 @@ public class TestMeteoDAO {
 		MeteoDAO dao = new MeteoDAO();
 
 		List<Rilevamento> list = dao.getAllRilevamenti();
+		List<Citta> leCitta = dao.getAllCitta();
 
 		// STAMPA: localita, giorno, mese, anno, umidita (%)
 		for (Rilevamento r : list) {
@@ -25,7 +27,10 @@ public class TestMeteoDAO {
 //		
 //		System.out.println(dao.getAllRilevamentiLocalitaMese(5, "Torino"));
 //		System.out.println(dao.getAvgRilevamentiLocalitaMese(5, "Torino"));
-		
+		for (Citta c:leCitta) {
+			System.out.println(dao.getAllRilevamentiLocalitaMese(1, c));
+			System.out.println(dao.getUmiditaMedia(1, c));
+		}
 
 	}
 

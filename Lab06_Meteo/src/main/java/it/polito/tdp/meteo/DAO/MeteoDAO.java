@@ -124,7 +124,7 @@ public class MeteoDAO {
 	 * @return
 	 */
 	
-	public Double getUmiditàMedia(int mese,Citta citta) {
+	public Double getUmiditaMedia(int mese,Citta citta) {
 		final String sql= "SELECT AVG(Umidita) AS U "
 				+ "FROM situazione "
 				+ "WHERE localita=? "
