@@ -18,18 +18,20 @@ public class Model {
 	public List<Citta> getLeCitta(){
 		return leCitta;
 	}
-
-	public Model() {
-		MeteoDAO dao= new MeteoDAO();
-		this.leCitta=dao.getAllCitta();
-	}
-
+	
 	// of course you can change the String output with what you think works best
 	public Double getUmiditaMedia(int mese,Citta citta) {
 		
 		MeteoDAO dao = new MeteoDAO();
 		return dao.getUmiditaMedia(mese, citta);
 	}
+
+	public Model() {
+		MeteoDAO dao= new MeteoDAO();
+		this.leCitta=dao.getAllCitta();
+	}
+
+
 	
 	// of course you can change the String output with what you think works best
 	/**
